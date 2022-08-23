@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+  variables:
+    env: "development"
+    aws_credential: "thisisawscredential"
+        
+phases:
+  install:
+    on-failure: ABORT
+    commands:
+      - echo "Installing..."
+      - echo $env
+      - echo $aws_credential
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo "Pre-build..."
+      - echo $env
+      - echo $aws_credential
+  build:
+    on-failure: ABORT
+    commands:
+      - echo "Building..."
+      - echo $env
+      - echo $aws_credential
+  post_build:
+    on-failure: ABORT 
+    commands:
+      - echo "Post-build..."
+      - echo $env
+      - echo $aws_credential
+
+
