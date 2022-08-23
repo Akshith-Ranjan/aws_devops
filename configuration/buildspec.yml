@@ -4,7 +4,11 @@ env:
   variables:
     env: "development"
     aws_credential: "thisisawscredential"
-        
+  parameter-store:
+    app_secret: "/devopslearning/development/scretpass1"
+    url: "/devopslearning/development/url"
+    db_password: "/devopslearning/development/db_pass"
+
 phases:
   install:
     on-failure: ABORT
@@ -12,23 +16,35 @@ phases:
       - echo "Installing..."
       - echo $env
       - echo $aws_credential
+      - echo $url
+      - echo $db_password
+      - echo $app_secret
   pre_build:
     on-failure: ABORT
     commands:
       - echo "Pre-build..."
       - echo $env
       - echo $aws_credential
+      - echo $url
+      - echo $db_password
+      - echo $app_secret
   build:
     on-failure: ABORT
     commands:
       - echo "Building..."
       - echo $env
       - echo $aws_credential
+      - echo $url
+      - echo $db_password
+      - echo $app_secret
   post_build:
     on-failure: ABORT 
     commands:
       - echo "Post-build..."
       - echo $env
       - echo $aws_credential
+      - echo $url
+      - echo $db_password
+      - echo $app_secret
 
 
