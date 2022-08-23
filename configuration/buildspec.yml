@@ -5,7 +5,7 @@ env:
     env: "development"
     aws_credential: "thisisawscredential"
   parameter-store:
-    app_secret: "/devopslearning/development/scretpass1"
+    # app_secret: "/devopslearning/development/scretpass1"
     url: "/devopslearning/development/url"
     db_password: "/devopslearning/development/db_pass"
 
